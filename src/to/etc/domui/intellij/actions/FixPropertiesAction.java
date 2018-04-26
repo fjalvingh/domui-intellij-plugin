@@ -27,6 +27,7 @@ import com.intellij.psi.PsiType;
 import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.impl.source.PsiClassReferenceType;
 import com.intellij.psi.util.PsiTreeUtil;
+import com.siyeh.ig.psiutils.ExpressionUtils;
 
 /**
  * @author <a href="mailto:jal@etc.to">Frits Jalvingh</a>
@@ -76,7 +77,6 @@ public class FixPropertiesAction extends AnAction {
 	}
 
 	private class MethodWithPropertyVisitor extends JavaRecursiveElementVisitor {
-
 		public static final String STRING_FQN = "java.lang.String";
 
 		/**
@@ -100,7 +100,7 @@ public class FixPropertiesAction extends AnAction {
 			if(null == targetClass)
 				return;
 
-			System.out.println("Target class = " + targetClass.getQualifiedName() + " method=" + methodName);
+			//System.out.println("Target class = " + targetClass.getQualifiedName() + " method=" + methodName);
 
 			QFieldMethod replacementMethod = findQFieldMethod(targetClass, methodName, mc.getArgumentList().getExpressionTypes());
 			if(null == replacementMethod) {
@@ -117,8 +117,27 @@ public class FixPropertiesAction extends AnAction {
 			}
 			System.out.println("- property is on " + dataClass.getCanonicalText());
 
+			//-- We can do this but we need the target to be annotated
+			PsiExpression propertyExpr = mc.getArgumentList().getExpressions()[replacementMethod.getqIndex()];
+			String path = calculatePropertyPath(propertyExpr);
+			if(null == path) {
+				System.out.println("- cannot resolve propertyExpr " + propertyExpr.getText());
+				return;
+			}
+			System.out.println("- property expr resolves to " + path);
 
 
+		}
+
+		private String calculatePropertyPath(PsiExpression propertyExpr) {
+			try {
+				Object o = ExpressionUtils.computeConstantExpression(propertyExpr);
+				if(o instanceof String) {
+					return (String) o;
+				}
+			} catch(Exception x) {
+			}
+			return null;
 		}
 
 		private PsiType findPropertySourceClass(PsiMethodCallExpression mc, PsiMethod replacementMethod, int qFieldIndex) {
@@ -148,9 +167,9 @@ public class FixPropertiesAction extends AnAction {
 				if(reference instanceof PsiReferenceExpression) {
 					PsiReferenceExpression rx = (PsiReferenceExpression) reference; // rr.column still
 					PsiExpression subref = rx.getQualifierExpression();
-					System.out.println("* " + subref);								// rr only, now
+					//System.out.println("* " + subref);								// rr only, now
 					PsiType type = subref.getType();
-					System.out.println("*  type " + type.getCanonicalText());		// to.etc.domui.component.tbl.RowRenderer<to.etc.domuidemo.pages.binding.xxxmodel.InvoiceLineModel>
+					//System.out.println("*  type " + type.getCanonicalText());		// to.etc.domui.component.tbl.RowRenderer<to.etc.domuidemo.pages.binding.xxxmodel.InvoiceLineModel>
 
 					//-- We should have a generic instantiation as the type
 					if(type instanceof PsiClassType) {
@@ -159,21 +178,12 @@ public class FixPropertiesAction extends AnAction {
 						PsiType[] typeParams = ct.getParameters();
 						if(typeParams != null && typeParams.length > 0) {
 							PsiType typeParam = typeParams[0];
-							System.out.println("  * contained type is " + typeParam);
+							//System.out.println("  * contained type is " + typeParam);
 							return typeParam;
 						}
 					}
-
-
-
 				}
-
-
-
 			}
-
-
-
 			return null;
 		}
 
