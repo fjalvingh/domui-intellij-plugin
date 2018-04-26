@@ -12,9 +12,12 @@ import com.intellij.openapi.vfs.ReadonlyStatusHandler;
 import com.intellij.openapi.vfs.ReadonlyStatusHandler.OperationStatus;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.JavaRecursiveElementVisitor;
+import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiMethodCallExpression;
 import com.intellij.psi.PsiType;
+import com.intellij.psi.util.PsiTreeUtil;
 
 /**
  * @author <a href="mailto:jal@etc.to">Frits Jalvingh</a>
@@ -69,21 +72,51 @@ public class FixPropertiesAction extends AnAction {
 		 */
 		@Override public void visitMethodCallExpression(PsiMethodCallExpression mc) {
 			super.visitMethodCallExpression(mc);
-			if(mc.getArgumentList().isEmpty()) {
+			if(! hasStringParameters(mc))
 				return;
-			}
 
-			//-- One of the types must be string
-			for(int i = 0; i < mc.getArgumentList().getExpressionTypes().length; i++) {
-				PsiType psiType = mc.getArgumentList().getExpressionTypes()[i];
+			PsiElement targetMethod = mc.getMethodExpression().getReference().resolve();
+			if(null == targetMethod)
+				return;
 
-				String canonicalText = psiType.getCanonicalText();
-				System.out.println(">> " + mc.getMethodExpression().getReferenceName() + " type " + i + " = " + canonicalText);
-			}
+			//-- Does the class that is the target have a method that has the same name and signature,
+			//-- but with one String replaced by a QField?
+			PsiClass targetClass = PsiTreeUtil.getParentOfType(targetMethod, PsiClass.class);
+			if(null == targetClass)
+				return;
 
+			System.out.println("Target class = " + targetClass.getQualifiedName());
+
+
+			////-- One of the types must be string
+			//for(int i = 0; i < mc.getArgumentList().getExpressionTypes().length; i++) {
+			//	PsiType psiType = mc.getArgumentList().getExpressionTypes()[i];
+			//
+			//	String canonicalText = psiType.getCanonicalText();
+			//	System.out.println(">> " + mc.getMethodExpression().getReferenceName() + " type " + i + " = " + canonicalText);
+			//
+			//
+			//	System.out.println(">> resolve = " + resolve.getText());
+			//
+			//}
+			//
 
 		}
+
+		private boolean hasStringParameters(PsiMethodCallExpression mc) {
+			if(mc.getArgumentList().isEmpty()) {
+				return false;
+			}
+			for(int i = 0; i < mc.getArgumentList().getExpressionTypes().length; i++) {
+				PsiType psiType = mc.getArgumentList().getExpressionTypes()[i];
+				if(psiType != null && psiType.getCanonicalText().equals("java.lang.String"))
+					return true;
+			}
+			return false;
+		}
+
 	}
+
 
 
 

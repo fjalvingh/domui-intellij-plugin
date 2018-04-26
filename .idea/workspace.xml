@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4f0a70f-b0d9-481c-9e6b-b04020e8acca" name="Default" comment="" />
+    <list default="true" id="e4f0a70f-b0d9-481c-9e6b-b04020e8acca" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,12 +27,57 @@
       <file leaf-file-name="FixPropertiesAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="77" column="79" lean-forward="true" selection-start-line="77" selection-start-column="79" selection-end-line="77" selection-end-column="79" />
+            <state relative-caret-position="546">
+              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1805#1806#0" expanded="true" />
                 <element signature="e#1833#1834#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompositeElement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../idea/platform/core-impl/src/com/intellij/psi/impl/source/tree/CompositeElement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="366" selection-start-line="366" selection-end-line="366" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SourceTreeToPsiMap.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../idea/platform/core-impl/src/com/intellij/psi/impl/source/SourceTreeToPsiMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#1121#1122#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeafPsiElement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../idea/platform/core-impl/src/com/intellij/psi/impl/source/tree/LeafPsiElement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="283" selection-start-line="283" selection-end-line="283" />
+              <folding>
+                <element signature="e#7811#7812#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PsiMethodCallExpressionImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/tree/java/PsiMethodCallExpressionImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
+              <folding>
+                <element signature="e#3121#3122#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,6 +110,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -93,6 +144,7 @@
     <option name="width" value="1838" />
     <option name="height" value="2133" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -253,12 +305,12 @@
       <workItem from="1524764972869" duration="4454000" />
       <workItem from="1524770282536" duration="109000" />
       <workItem from="1524770406044" duration="1347000" />
-      <workItem from="1524771774912" duration="833000" />
+      <workItem from="1524771774912" duration="2294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6743000" />
+    <option name="totallyTimeSpent" value="8204000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1838" height="2133" extended-state="4" />
@@ -277,11 +329,12 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39990065" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="right" id="PsiViewer" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32985595" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24888393" />
@@ -290,7 +343,6 @@
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="7" />
-      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -308,6 +360,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
@@ -430,10 +487,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/tree/java/PsiMethodCallExpressionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+          <folding>
+            <element signature="e#3121#3122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/platform/core-impl/src/com/intellij/psi/impl/source/tree/LeafPsiElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="283" selection-start-line="283" selection-end-line="283" />
+          <folding>
+            <element signature="e#7811#7812#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/platform/core-impl/src/com/intellij/psi/impl/source/SourceTreeToPsiMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#1121#1122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/platform/core-impl/src/com/intellij/psi/impl/source/tree/CompositeElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="366" selection-start-line="366" selection-end-line="366" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/tree/java/PsiReferenceExpressionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="796" column="38" selection-start-line="796" selection-start-column="38" selection-end-line="796" selection-end-column="38" />
+          <folding>
+            <element signature="e#24502#24503#0" expanded="true" />
+            <element signature="e#24572#24573#0" expanded="true" />
+            <element signature="e#33498#33499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="77" column="79" lean-forward="true" selection-start-line="77" selection-start-column="79" selection-end-line="77" selection-end-column="79" />
+        <state relative-caret-position="546">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1805#1806#0" expanded="true" />
