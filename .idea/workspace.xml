@@ -27,13 +27,22 @@
       <file leaf-file-name="FixPropertiesAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+            <state relative-caret-position="537">
+              <caret line="103" column="78" selection-start-line="103" selection-start-column="78" selection-end-line="103" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1805#1806#0" expanded="true" />
                 <element signature="e#1833#1834#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PsiExpressionListImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/tree/java/PsiExpressionListImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -74,9 +83,10 @@
       <file leaf-file-name="PsiMethodCallExpressionImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/tree/java/PsiMethodCallExpressionImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="80" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="770">
+              <caret line="90" selection-start-line="90" selection-end-line="90" />
               <folding>
+                <element signature="e#3024#3025#0" expanded="true" />
                 <element signature="e#3121#3122#0" expanded="true" />
               </folding>
             </state>
@@ -305,12 +315,20 @@
       <workItem from="1524764972869" duration="4454000" />
       <workItem from="1524770282536" duration="109000" />
       <workItem from="1524770406044" duration="1347000" />
-      <workItem from="1524771774912" duration="2294000" />
+      <workItem from="1524771774912" duration="5354000" />
     </task>
+    <task id="LOCAL-00001" summary="Reached the target class of a method call (FormBuilder ;)">
+      <created>1524774210369</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1524774210369</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8204000" />
+    <option name="totallyTimeSpent" value="11264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1838" height="2133" extended-state="4" />
@@ -359,12 +377,39 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
+    <MESSAGE value="Reached the target class of a method call (FormBuilder ;)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reached the target class of a method call (FormBuilder ;)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java</url>
+          <line>124</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java</url>
+          <line>156</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
     </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>formalType.getCanonicalText()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
@@ -487,16 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/tree/java/PsiMethodCallExpressionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-          <folding>
-            <element signature="e#3121#3122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../idea/platform/core-impl/src/com/intellij/psi/impl/source/tree/LeafPsiElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
@@ -536,10 +571,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/tree/java/PsiMethodCallExpressionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
+          <folding>
+            <element signature="e#3024#3025#0" expanded="true" />
+            <element signature="e#3121#3122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/tree/java/PsiExpressionListImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        <state relative-caret-position="537">
+          <caret line="103" column="78" selection-start-line="103" selection-start-column="78" selection-end-line="103" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1805#1806#0" expanded="true" />
