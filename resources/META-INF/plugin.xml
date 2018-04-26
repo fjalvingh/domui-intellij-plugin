@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>to.etc.domui.intellij.plugin</id>
+  <name>DomUI Development Plugin</name>
+  <version>1.0</version>
+  <vendor email="jal@domui.org" url="http://domui.org/">The DomUI user interface</vendor>
+
+  <description><![CDATA[
+      Helps with developing DomUI applications.
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Initial release
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <application-components>
+    <component>
+      <implementation-class>to.etc.domui.intellij.PluginApplication</implementation-class>
+    </component>
+  </application-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <group id="to.etc.domui.intellij.MyGroup" text="DomUI options" description="DomUI examples">
+      <add-to-group group-id="RefactoringMenu" anchor="last" />
+      <action class="to.etc.domui.intellij.actions.FixPropertiesAction" id="to.etc.domui.intellij.FixPluginsAction" text="Fix Properties" />
+    </group>
+  </actions>
+
+</idea-plugin>
