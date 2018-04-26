@@ -13,13 +13,19 @@ import com.intellij.openapi.vfs.ReadonlyStatusHandler.OperationStatus;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.JavaRecursiveElementVisitor;
 import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiMethodCallExpression;
 import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiParameterList;
+import com.intellij.psi.PsiReference;
+import com.intellij.psi.PsiReferenceExpression;
 import com.intellij.psi.PsiType;
+import com.intellij.psi.PsiTypeParameter;
+import com.intellij.psi.impl.source.PsiClassReferenceType;
 import com.intellij.psi.util.PsiTreeUtil;
 
 /**
@@ -96,71 +102,131 @@ public class FixPropertiesAction extends AnAction {
 
 			System.out.println("Target class = " + targetClass.getQualifiedName() + " method=" + methodName);
 
-			PsiMethod replacementMethod = findQFieldMethod(targetClass, methodName, mc.getArgumentList().getExpressionTypes());
+			QFieldMethod replacementMethod = findQFieldMethod(targetClass, methodName, mc.getArgumentList().getExpressionTypes());
 			if(null == replacementMethod) {
 				System.out.println(" - no alt found");
 				return;
 			}
-			System.out.println(" - replacement " + replacementMethod.getText());
+			System.out.println(" - replacement " + replacementMethod.getMethod().getText());
 
-			////-- One of the types must be string
-			//for(int i = 0; i < mc.getArgumentList().getExpressionTypes().length; i++) {
-			//	PsiType psiType = mc.getArgumentList().getExpressionTypes()[i];
-			//
-			//	String canonicalText = psiType.getCanonicalText();
-			//	System.out.println(">> " + mc.getMethodExpression().getReferenceName() + " type " + i + " = " + canonicalText);
-			//
-			//
-			//	System.out.println(">> resolve = " + resolve.getText());
-			//
-			//}
-			//
+			//-- Find the type that needs to have properties generated,
+			PsiType dataClass = findPropertySourceClass(mc, replacementMethod.getMethod(), replacementMethod.getqIndex());
+			if(null == dataClass) {
+				System.out.println("- cannot find type of object");
+				return;
+			}
+			System.out.println("- property is on " + dataClass.getCanonicalText());
+
+
 
 		}
 
-		private PsiMethod findQFieldMethod(PsiClass targetClass, String methodName, PsiType[] matchingTypes) {
+		private PsiType findPropertySourceClass(PsiMethodCallExpression mc, PsiMethod replacementMethod, int qFieldIndex) {
+			PsiParameterList parameterList = replacementMethod.getParameterList();
+			PsiParameter[] parameters = parameterList.getParameters();
+			if(qFieldIndex == 1) {
+				//-- We would expect the parameter before the qfield to be the type - it must be Object or generic
+				PsiType formalType = parameters[0].getType();
+				if(formalType instanceof PsiClassReferenceType) {
+					PsiClassReferenceType rt = (PsiClassReferenceType) formalType;
+					PsiClass resolvedType = rt.resolve();
+					if(resolvedType instanceof PsiTypeParameter) {
+						//-- It is -> get the actual's type
+						PsiType actualType = mc.getArgumentList().getExpressionTypes()[0];
+						return actualType;
+					}
+				}
+				return null;
+			}
+
+			if(qFieldIndex == 0) {
+				//-- We should look at a class type parameter of the actual class mc is method of
+				PsiReference reference = mc.getMethodExpression().getReference();	// rr.column
+				if(null == reference)
+					return null;
+
+				if(reference instanceof PsiReferenceExpression) {
+					PsiReferenceExpression rx = (PsiReferenceExpression) reference; // rr.column still
+					PsiExpression subref = rx.getQualifierExpression();
+					System.out.println("* " + subref);								// rr only, now
+					PsiType type = subref.getType();
+					System.out.println("*  type " + type.getCanonicalText());		// to.etc.domui.component.tbl.RowRenderer<to.etc.domuidemo.pages.binding.xxxmodel.InvoiceLineModel>
+
+					//-- We should have a generic instantiation as the type
+					if(type instanceof PsiClassType) {
+						PsiClassType ct = (PsiClassType) type;
+
+						PsiType[] typeParams = ct.getParameters();
+						if(typeParams != null && typeParams.length > 0) {
+							PsiType typeParam = typeParams[0];
+							System.out.println("  * contained type is " + typeParam);
+							return typeParam;
+						}
+					}
+
+
+
+				}
+
+
+
+			}
+
+
+
+			return null;
+		}
+
+
+		/**
+		 * Find a method similar in nam and arguments to the passed method, but with one of the
+		 * String parameters changed to QField.
+		 */
+		private QFieldMethod findQFieldMethod(PsiClass targetClass, String methodName, PsiType[] matchingTypes) {
 			PsiMethod[] methods = targetClass.getAllMethods();
 			for(PsiMethod method : methods) {
 				if(method.getName().equals(methodName)) {
-					if(methodHasSimilarParameters(method, matchingTypes)) {
-						return method;
+					int index = methodHasSimilarParameters(method, matchingTypes);
+					if(index >= 0) {
+						return new QFieldMethod(method, index);
 					}
 				}
 			}
 			return null;
 		}
 
-		private boolean methodHasSimilarParameters(PsiMethod method, PsiType[] matchingTypes) {
+		private int methodHasSimilarParameters(PsiMethod method, PsiType[] matchingTypes) {
 			PsiParameterList parameterList = method.getParameterList();
 			PsiParameter[] parameters = parameterList.getParameters();
 			if(parameters.length != matchingTypes.length)
-				return false;
+				return -1;
 
-			boolean gotQField = false;
+			int gotQField = -1;
 			for(int i = 0; i < parameters.length; i++) {
 				PsiParameter parameter = parameters[i];
 				PsiType formalType = parameter.getType();
 				PsiType actualType = matchingTypes[i];
 				if(null == formalType || null == actualType)
-					return false;
+					return -1;
 
 				if(formalType.getCanonicalText().startsWith(QFIELD_FQN + "<")) {		// Formal is QField
 					//-- Actual must be String for match
 					if(actualType.getCanonicalText().startsWith(STRING_FQN)) {
 						//-- Match && qfield found
-						gotQField = true;
+						if(gotQField != -1)						// Second one?
+							return -1;
+						gotQField = i;
 					} else {
-						return false;
+						return -1;
 					}
 				} else {
 					//-- Does the formal accept the actual?
 					if(! formalType.isConvertibleFrom(actualType))
-						return false;
+						return -1;
 				}
 			}
 			return gotQField;
 		}
-
 
 		private boolean hasStringParameters(PsiMethodCallExpression mc) {
 			if(mc.getArgumentList().isEmpty()) {
@@ -177,6 +243,23 @@ public class FixPropertiesAction extends AnAction {
 	}
 
 
+	private static class QFieldMethod {
+		final private PsiMethod m_method;
 
+		final private int m_qIndex;
+
+		public QFieldMethod(PsiMethod method, int qIndex) {
+			m_method = method;
+			m_qIndex = qIndex;
+		}
+
+		public PsiMethod getMethod() {
+			return m_method;
+		}
+
+		public int getqIndex() {
+			return m_qIndex;
+		}
+	}
 
 }
