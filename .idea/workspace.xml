@@ -18,8 +18,8 @@
       <file leaf-file-name="FixPropertiesAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1032">
-              <caret line="163" column="25" lean-forward="true" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="25" />
+            <state relative-caret-position="700">
+              <caret line="153" column="49" lean-forward="true" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1805#1806#0" expanded="true" />
@@ -33,89 +33,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypeCorrector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/TypeCorrector.java">
+      <file leaf-file-name="PsiType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="127" column="61" selection-start-line="127" selection-start-column="61" selection-end-line="127" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PsiClassType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiClassType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="334" column="52" selection-start-line="334" selection-start-column="52" selection-end-line="334" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PsiMethodCallExpression.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiMethodCallExpression.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PsiCallExpression.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiCallExpression.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="25" column="63" lean-forward="true" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PsiCall.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiCall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PsiExpressionListImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/tree/java/PsiExpressionListImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompositeElement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/platform/core-impl/src/com/intellij/psi/impl/source/tree/CompositeElement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="366" selection-start-line="366" selection-end-line="366" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SourceTreeToPsiMap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/platform/core-impl/src/com/intellij/psi/impl/source/SourceTreeToPsiMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="713">
+              <caret line="356" column="12" lean-forward="true" selection-start-line="356" selection-start-column="12" selection-end-line="356" selection-end-column="12" />
               <folding>
-                <element signature="e#1121#1122#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PsiMethodCallExpressionImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/tree/java/PsiMethodCallExpressionImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="126" selection-start-line="126" selection-end-line="126" />
-              <folding>
-                <element signature="e#3024#3025#0" expanded="true" />
-                <element signature="e#3121#3122#0" expanded="true" />
+                <element signature="e#11673#11674#0" expanded="true" />
+                <element signature="e#11723#11724#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -325,7 +250,7 @@
       <workItem from="1524764972869" duration="4454000" />
       <workItem from="1524770282536" duration="109000" />
       <workItem from="1524770406044" duration="1347000" />
-      <workItem from="1524771774912" duration="8788000" />
+      <workItem from="1524771774912" duration="11022000" />
     </task>
     <task id="LOCAL-00001" summary="Reached the target class of a method call (FormBuilder ;)">
       <created>1524774210369</created>
@@ -341,11 +266,25 @@
       <option name="project" value="LOCAL" />
       <updated>1524777614298</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Discover the type of thing that the property string is from.">
+      <created>1524781051789</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524781051789</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Resolve the property referred to as a string.">
+      <created>1524782002061</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1524782002061</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14698000" />
+    <option name="totallyTimeSpent" value="16932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1838" height="2133" extended-state="4" />
@@ -399,19 +338,27 @@
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
     <MESSAGE value="Reached the target class of a method call (FormBuilder ;)" />
     <MESSAGE value="Find a replacement method with QField for some method having a String." />
-    <option name="LAST_COMMIT_MESSAGE" value="Find a replacement method with QField for some method having a String." />
+    <MESSAGE value="Discover the type of thing that the property string is from." />
+    <MESSAGE value="Resolve the property referred to as a string." />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolve the property referred to as a string." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java</url>
-          <line>223</line>
+          <line>270</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java</url>
+          <line>153</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -648,10 +595,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/PsiConstantEvaluationHelperImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiConstantEvaluationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/plugins/InspectionGadgets/InspectionGadgetsAnalysis/src/com/siyeh/ig/psiutils/ExpressionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="356" column="12" lean-forward="true" selection-start-line="356" selection-start-column="12" selection-end-line="356" selection-end-column="12" />
+          <folding>
+            <element signature="e#11673#11674#0" expanded="true" />
+            <element signature="e#11723#11724#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1032">
-          <caret line="163" column="25" lean-forward="true" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="25" />
+        <state relative-caret-position="700">
+          <caret line="153" column="49" lean-forward="true" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1805#1806#0" expanded="true" />

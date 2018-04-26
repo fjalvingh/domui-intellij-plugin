@@ -12,6 +12,7 @@ import com.intellij.openapi.vfs.ReadonlyStatusHandler;
 import com.intellij.openapi.vfs.ReadonlyStatusHandler.OperationStatus;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.JavaRecursiveElementVisitor;
+import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiElement;
@@ -35,6 +36,8 @@ import com.siyeh.ig.psiutils.ExpressionUtils;
  */
 public class FixPropertiesAction extends AnAction {
 	static private final String QFIELD_FQN = "to.etc.webapp.query.QField";
+
+	static private final String GENPROP_FQN = "to.etc.annotations.GenerateProperties";
 
 
 	@Override public void actionPerformed(AnActionEvent e) {
@@ -126,9 +129,43 @@ public class FixPropertiesAction extends AnAction {
 			}
 			System.out.println("- property expr resolves to " + path);
 
+			//-- Annotate the target class
+			addAnnotationToDataClass(dataClass);
+
+
+
+
 
 		}
 
+
+		/**
+		 * Is the class already annotated?
+		 */
+		private void addAnnotationToDataClass(PsiType dataClass) {
+			if(hasAnnotation(dataClass, GENPROP_FQN))
+				return;
+
+			PsiClassReferenceType rt = (PsiClassReferenceType) dataClass;
+			PsiClass psiClass = rt.resolve();
+			PsiAnnotation anno
+
+
+			dataClass.addAnnotation(GENPROP_FQN);
+		}
+
+		private boolean hasAnnotation(PsiType dataClass, String name) {
+			for(PsiAnnotation psiAnnotation : dataClass.getAnnotations()) {
+				if(psiAnnotation.getQualifiedName().equals(name))
+					return true;
+			}
+			return false;
+		}
+
+
+		/**
+		 * Resolve the full property path.
+		 */
 		private String calculatePropertyPath(PsiExpression propertyExpr) {
 			try {
 				Object o = ExpressionUtils.computeConstantExpression(propertyExpr);
