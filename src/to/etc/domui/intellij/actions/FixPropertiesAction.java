@@ -1,23 +1,28 @@
 package to.etc.domui.intellij.actions;
 
+import com.intellij.codeInsight.AnnotationUtil;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.ReadonlyStatusHandler;
 import com.intellij.openapi.vfs.ReadonlyStatusHandler.OperationStatus;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.JavaRecursiveElementVisitor;
 import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiElementFactory;
 import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiMethodCallExpression;
 import com.intellij.psi.PsiParameter;
@@ -26,11 +31,19 @@ import com.intellij.psi.PsiReference;
 import com.intellij.psi.PsiReferenceExpression;
 import com.intellij.psi.PsiType;
 import com.intellij.psi.PsiTypeParameter;
+import com.intellij.psi.codeStyle.JavaCodeStyleManager;
 import com.intellij.psi.impl.source.PsiClassReferenceType;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.siyeh.ig.psiutils.ExpressionUtils;
 
 /**
+ *
+ * Used examples:
+ * <ul>
+ *     <li>https://github.com/joewalnes/idea-community/blob/master/plugins/testng/src/com/theoryinpractice/testng/inspection/JUnitConvertTool.java</li>
+ * </ul>
+ *
+ *
  * @author <a href="mailto:jal@etc.to">Frits Jalvingh</a>
  * Created on 26-4-18.
  */
@@ -46,6 +59,8 @@ public class FixPropertiesAction extends AnAction {
 		Document document = e.getData(PlatformDataKeys.EDITOR).getDocument();
 		Project project = e.getData(PlatformDataKeys.PROJECT);
 
+		final PsiManager psiManager = PsiManager.getInstance(project);
+
 		OperationStatus os = ReadonlyStatusHandler.getInstance(project).ensureFilesWritable(myFile);
 		if(os.hasReadonlyFiles()) {
 			Messages.showErrorDialog("The file(s) are readonly", "Welcome");
@@ -56,31 +71,46 @@ public class FixPropertiesAction extends AnAction {
 		System.out.println("Psi: ===================");
 		System.out.println(psiFile.toString());
 
-		FixPropertiesCommand fp = new FixPropertiesCommand(psiFile);
+		FixPropertiesCommand fp = new FixPropertiesCommand(psiManager, psiFile);
 
-		com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(project, fp, "Fix Properties", null);
-
-
+		CommandProcessor.getInstance().executeCommand(project, fp, "Fix Properties", null);
 
 
 	}
 
 	private class FixPropertiesCommand implements Runnable {
+		private final PsiManager m_psiManager;
+
 		private final PsiFile m_psiFile;
 
-		public FixPropertiesCommand(PsiFile psiFile) {
+		private final PsiElementFactory m_psiElementFactory;
+
+		public FixPropertiesCommand(PsiManager psiManager, PsiFile psiFile) {
+			m_psiManager = psiManager;
 			m_psiFile = psiFile;
+			m_psiElementFactory = JavaPsiFacade.getInstance(m_psiManager.getProject()).getElementFactory();
 		}
 
 		@Override public void run() {
+			//final PsiJavaFile javaFile = (PsiJavaFile)psiClass.getContainingFile();
+
 			ApplicationManager.getApplication().runWriteAction(() -> {
-				m_psiFile.accept(new MethodWithPropertyVisitor());
+				m_psiFile.accept(new MethodWithPropertyVisitor(m_psiManager, m_psiElementFactory));
 			});
 		}
 	}
 
 	private class MethodWithPropertyVisitor extends JavaRecursiveElementVisitor {
 		public static final String STRING_FQN = "java.lang.String";
+
+		private final PsiManager m_psiManager;
+
+		private final PsiElementFactory m_psiElementFactory;
+
+		public MethodWithPropertyVisitor(PsiManager psiManager, PsiElementFactory psiElementFactory) {
+			m_psiManager = psiManager;
+			m_psiElementFactory = psiElementFactory;
+		}
 
 		/**
 		 * If the method call in the resolved class has an alternative that has
@@ -89,7 +119,7 @@ public class FixPropertiesAction extends AnAction {
 		 */
 		@Override public void visitMethodCallExpression(PsiMethodCallExpression mc) {
 			super.visitMethodCallExpression(mc);
-			if(! hasStringParameters(mc))
+			if(!hasStringParameters(mc))
 				return;
 
 			String methodName = mc.getMethodExpression().getReferenceName();
@@ -133,9 +163,6 @@ public class FixPropertiesAction extends AnAction {
 			addAnnotationToDataClass(dataClass);
 
 
-
-
-
 		}
 
 
@@ -143,25 +170,20 @@ public class FixPropertiesAction extends AnAction {
 		 * Is the class already annotated?
 		 */
 		private void addAnnotationToDataClass(PsiType dataClass) {
-			if(hasAnnotation(dataClass, GENPROP_FQN))
+			PsiClassType rt = (PsiClassType) dataClass;
+			PsiClass psiClass = rt.resolve();
+			if(null == psiClass)
+				return;
+			if(hasAnnotation(psiClass, GENPROP_FQN))
 				return;
 
-			PsiClassReferenceType rt = (PsiClassReferenceType) dataClass;
-			PsiClass psiClass = rt.resolve();
-			PsiAnnotation anno
-
-
-			dataClass.addAnnotation(GENPROP_FQN);
+			PsiAnnotation annotation = m_psiElementFactory.createAnnotationFromText("@" + GENPROP_FQN, psiClass);
+			JavaCodeStyleManager.getInstance(annotation.getProject()).shortenClassReferences(psiClass.getModifierList().addAfter(annotation, null));
 		}
 
-		private boolean hasAnnotation(PsiType dataClass, String name) {
-			for(PsiAnnotation psiAnnotation : dataClass.getAnnotations()) {
-				if(psiAnnotation.getQualifiedName().equals(name))
-					return true;
-			}
-			return false;
+		private boolean hasAnnotation(PsiClass psiClass, String name) {
+			return null != AnnotationUtil.findAnnotation(psiClass, name);
 		}
-
 
 		/**
 		 * Resolve the full property path.
@@ -197,7 +219,7 @@ public class FixPropertiesAction extends AnAction {
 
 			if(qFieldIndex == 0) {
 				//-- We should look at a class type parameter of the actual class mc is method of
-				PsiReference reference = mc.getMethodExpression().getReference();	// rr.column
+				PsiReference reference = mc.getMethodExpression().getReference();    // rr.column
 				if(null == reference)
 					return null;
 
@@ -256,11 +278,11 @@ public class FixPropertiesAction extends AnAction {
 				if(null == formalType || null == actualType)
 					return -1;
 
-				if(formalType.getCanonicalText().startsWith(QFIELD_FQN + "<")) {		// Formal is QField
+				if(formalType.getCanonicalText().startsWith(QFIELD_FQN + "<")) {        // Formal is QField
 					//-- Actual must be String for match
 					if(actualType.getCanonicalText().startsWith(STRING_FQN)) {
 						//-- Match && qfield found
-						if(gotQField != -1)						// Second one?
+						if(gotQField != -1)                        // Second one?
 							return -1;
 						gotQField = i;
 					} else {
@@ -268,7 +290,7 @@ public class FixPropertiesAction extends AnAction {
 					}
 				} else {
 					//-- Does the formal accept the actual?
-					if(! formalType.isConvertibleFrom(actualType))
+					if(!formalType.isConvertibleFrom(actualType))
 						return -1;
 				}
 			}
