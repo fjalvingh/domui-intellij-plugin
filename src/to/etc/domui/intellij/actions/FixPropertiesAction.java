@@ -27,12 +27,14 @@ import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiMethodCallExpression;
 import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiParameterList;
+import com.intellij.psi.PsiPrimitiveType;
 import com.intellij.psi.PsiReference;
 import com.intellij.psi.PsiReferenceExpression;
 import com.intellij.psi.PsiType;
 import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.codeStyle.JavaCodeStyleManager;
 import com.intellij.psi.impl.source.PsiClassReferenceType;
+import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.siyeh.ig.psiutils.ExpressionUtils;
 
@@ -71,7 +73,7 @@ public class FixPropertiesAction extends AnAction {
 		System.out.println("Psi: ===================");
 		System.out.println(psiFile.toString());
 
-		FixPropertiesCommand fp = new FixPropertiesCommand(psiManager, psiFile);
+		FixPropertiesCommand fp = new FixPropertiesCommand(project, psiManager, psiFile);
 
 		CommandProcessor.getInstance().executeCommand(project, fp, "Fix Properties", null);
 
@@ -79,23 +81,29 @@ public class FixPropertiesAction extends AnAction {
 	}
 
 	private class FixPropertiesCommand implements Runnable {
+		private final Project m_project;
+
 		private final PsiManager m_psiManager;
 
 		private final PsiFile m_psiFile;
 
 		private final PsiElementFactory m_psiElementFactory;
 
-		public FixPropertiesCommand(PsiManager psiManager, PsiFile psiFile) {
+		private final JavaPsiFacade m_javaPsiFacade;
+
+		public FixPropertiesCommand(Project project, PsiManager psiManager, PsiFile psiFile) {
+			m_project = project;
 			m_psiManager = psiManager;
 			m_psiFile = psiFile;
-			m_psiElementFactory = JavaPsiFacade.getInstance(m_psiManager.getProject()).getElementFactory();
+			JavaPsiFacade javaPsiFacade = m_javaPsiFacade = JavaPsiFacade.getInstance(m_psiManager.getProject());
+			m_psiElementFactory = javaPsiFacade.getElementFactory();
 		}
 
 		@Override public void run() {
 			//final PsiJavaFile javaFile = (PsiJavaFile)psiClass.getContainingFile();
 
 			ApplicationManager.getApplication().runWriteAction(() -> {
-				m_psiFile.accept(new MethodWithPropertyVisitor(m_psiManager, m_psiElementFactory));
+				m_psiFile.accept(new MethodWithPropertyVisitor(m_project, m_psiManager, m_javaPsiFacade, m_psiElementFactory));
 			});
 		}
 	}
@@ -103,12 +111,18 @@ public class FixPropertiesAction extends AnAction {
 	private class MethodWithPropertyVisitor extends JavaRecursiveElementVisitor {
 		public static final String STRING_FQN = "java.lang.String";
 
+		private final Project m_project;
+
 		private final PsiManager m_psiManager;
+
+		private final JavaPsiFacade m_javaPsiFacade;
 
 		private final PsiElementFactory m_psiElementFactory;
 
-		public MethodWithPropertyVisitor(PsiManager psiManager, PsiElementFactory psiElementFactory) {
+		public MethodWithPropertyVisitor(Project project, PsiManager psiManager, JavaPsiFacade javaPsiFacade, PsiElementFactory psiElementFactory) {
+			m_project = project;
 			m_psiManager = psiManager;
+			m_javaPsiFacade = javaPsiFacade;
 			m_psiElementFactory = psiElementFactory;
 		}
 
@@ -143,12 +157,21 @@ public class FixPropertiesAction extends AnAction {
 			System.out.println(" - replacement " + replacementMethod.getMethod().getText());
 
 			//-- Find the type that needs to have properties generated,
-			PsiType dataClass = findPropertySourceClass(mc, replacementMethod.getMethod(), replacementMethod.getqIndex());
-			if(null == dataClass) {
+			PsiType dataClassTypeRef = findPropertySourceClass(mc, replacementMethod.getMethod(), replacementMethod.getqIndex());
+			if(null == dataClassTypeRef) {
 				System.out.println("- cannot find type of object");
 				return;
 			}
-			System.out.println("- property is on " + dataClass.getCanonicalText());
+			System.out.println("- property is on " + dataClassTypeRef.getCanonicalText());
+			if(! (dataClassTypeRef instanceof PsiClassType)) {
+				System.out.println("- data class is not of type Class");
+				return;
+			}
+			PsiClassType dataClassType = (PsiClassType) dataClassTypeRef;
+
+			PsiClass dataClass = dataClassType.resolve();
+			if(null == dataClass)
+				return;
 
 			//-- We can do this but we need the target to be annotated
 			PsiExpression propertyExpr = mc.getArgumentList().getExpressions()[replacementMethod.getqIndex()];
@@ -159,18 +182,96 @@ public class FixPropertiesAction extends AnAction {
 			}
 			System.out.println("- property expr resolves to " + path);
 
+			//-- We need a reference to the data class with a _ appended
+			//PsiClass aClass = m_psiElementFactory.createClass(((PsiClassType) dataClass).getClassName() + "_");
+			PsiClass aClass = m_javaPsiFacade.findClass(dataClass.getQualifiedName() + "_", GlobalSearchScope.allScope(m_project));
+			//PsiClassType qclass = m_psiElementFactory.createTypeByFQClassName(((PsiClassType) dataClass).getClassName() + "_");
+
+			//PsiReferenceExpression prx = m_psiElementFactory.createReferenceExpression(aClass);
+			//
 			//-- Annotate the target class
-			addAnnotationToDataClass(dataClass);
+			String callPath = resolvePropertyPath(dataClassType, path);
+			if(null == callPath)
+				return;
+
+			PsiExpression ref = m_psiElementFactory.createExpressionFromText(aClass.getName() + "." + callPath, mc);
+			propertyExpr.replace(ref);
+		}
+
+		private String resolvePropertyPath(PsiClassType rootType, String path) {
+			StringBuilder sb = new StringBuilder();
+			String[] segments = path.split("\\.");
+			PsiClassType ct = rootType;
+			for(String segment : segments) {
+				if(sb.length() > 0)
+					sb.append('.');
+				sb.append(segment).append("()");
+
+				//-- First: Annotate whatever class
+				addAnnotationToDataClass(ct);					// Make sure the class the property comes from is annotated
+
+				//-- Find the next step.
+				PsiMethod getter = findProperty(ct, segment);
+				if(null == getter) {
+					return sb.toString();
+				}
+
+				PsiType returnType = getter.getReturnType();
+				if(returnType instanceof PsiPrimitiveType) {
+					System.out.println(">> at " + segment + " is primitive");
+					return sb.toString();
+				}
+
+				if(returnType instanceof PsiClassType) {
+					ct = (PsiClassType) returnType;
 
 
+				} else {
+					System.out.println(">> at " + segment + " no class");
+					return null;
+				}
+			}
+			return sb.toString();
+		}
+
+		private PsiMethod findProperty(PsiClassType rt, String name) {
+			PsiClass psiClass = rt.resolve();
+			if(null == psiClass)
+				return null;
+
+			String javaCrapName = crapName(name);
+			PsiMethod[] allMethods = psiClass.getAllMethods();
+			for(PsiMethod method : allMethods) {
+				String s = method.getName();
+				if(s.startsWith("is")) {
+					if(s.substring(2).equals(javaCrapName)) {
+						return method;
+					}
+				} else if(s.startsWith("get")) {
+					if(s.substring(3).equals(javaCrapName)) {
+						return method;
+					}
+				}
+			}
+			return null;
+		}
+
+		/**
+		 * Convert a property name to the crappy java method name, without the is or get.
+		 */
+		private String crapName(String name) {
+			if(name.length() > 1) {
+				if(Character.isUpperCase(name.charAt(0)))
+					return name;
+			}
+			return Character.toUpperCase(name.charAt(0)) + name.substring(1);
 		}
 
 
 		/**
 		 * Is the class already annotated?
 		 */
-		private void addAnnotationToDataClass(PsiType dataClass) {
-			PsiClassType rt = (PsiClassType) dataClass;
+		private void addAnnotationToDataClass(PsiClassType rt ) {
 			PsiClass psiClass = rt.resolve();
 			if(null == psiClass)
 				return;

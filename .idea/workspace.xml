@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4f0a70f-b0d9-481c-9e6b-b04020e8acca" name="Default" comment="Should add annotation to data class.">
+    <list default="true" id="e4f0a70f-b0d9-481c-9e6b-b04020e8acca" name="Default" comment="Adds annotation to data class proper ;)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" afterDir="false" />
     </list>
@@ -13,27 +13,88 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@61" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@61" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@61" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dmt_275_prd: database" type="6d9b600a:PostgresImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@61" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dmt_275_prd: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@61" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dmt_275_prd: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="datamart: schema" type="a16502c0:PostgresImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@61" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dmt_275_prd: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="datamart: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@61" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dmt_275_prd: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="datamart: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="views" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="FixPropertiesAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="718">
-              <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+            <state relative-caret-position="601">
+              <caret line="198" selection-start-line="198" selection-end-line="198" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6863#6864#0" expanded="true" />
-                <element signature="e#6932#6933#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypeCorrector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/TypeCorrector.java">
+      <file leaf-file-name="PsiElement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../idea/platform/core-api/src/com/intellij/psi/PsiElement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="127" column="61" lean-forward="true" selection-start-line="127" selection-start-column="61" selection-end-line="127" selection-end-column="61" />
+            <state relative-caret-position="436">
+              <caret line="178" column="15" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -42,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiClassType.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="386">
-              <caret line="334" column="31" selection-start-line="334" selection-start-column="31" selection-end-line="334" selection-end-column="31" />
+              <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -50,26 +111,21 @@
       <file leaf-file-name="PsiClassReferenceType.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/PsiClassReferenceType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+            <state relative-caret-position="1288">
+              <caret line="215" column="16" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
+              <folding>
+                <element signature="e#7392#7393#0" expanded="true" />
+                <element signature="e#7442#7443#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CodeInsightUtilBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/platform/lang-impl/src/com/intellij/codeInsight/CodeInsightUtilBase.java">
+      <file leaf-file-name="GenericsUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/GenericsUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PsiJavaParserFacadeImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/PsiJavaParserFacadeImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="718">
-              <caret line="103" column="67" lean-forward="true" selection-start-line="103" selection-start-column="67" selection-end-line="103" selection-end-column="67" />
+            <state relative-caret-position="672">
+              <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -86,6 +142,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>PsiAnn</find>
+      <find>Util</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,7 +176,7 @@
   <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="1920" />
     <option name="y" value="27" />
-    <option name="width" value="1828" />
+    <option name="width" value="1778" />
     <option name="height" value="2133" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -128,8 +185,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -159,25 +214,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="intellij" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="domui-intellij-plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="domui-intellij-plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-            <path>
-              <item name="domui-intellij-plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="58054ca2-cc18-4bb3-ad0b-28f147c2fa15" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,7 +342,12 @@
       <workItem from="1524770282536" duration="109000" />
       <workItem from="1524770406044" duration="1347000" />
       <workItem from="1524771774912" duration="11051000" />
-      <workItem from="1524825720783" duration="6450000" />
+      <workItem from="1524825720783" duration="7399000" />
+      <workItem from="1525002688905" duration="4568000" />
+      <workItem from="1525720499439" duration="2490000" />
+      <workItem from="1525723342685" duration="434000" />
+      <workItem from="1525723872255" duration="737000" />
+      <workItem from="1525974964741" duration="2391000" />
     </task>
     <task id="LOCAL-00001" summary="Reached the target class of a method call (FormBuilder ;)">
       <created>1524774210369</created>
@@ -337,14 +384,21 @@
       <option name="project" value="LOCAL" />
       <updated>1524783282273</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adds annotation to data class proper ;)">
+      <created>1524838024207</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1524838024207</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23411000" />
+    <option name="totallyTimeSpent" value="34980000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="27" width="1828" height="2133" extended-state="4" />
+    <frame x="1920" y="27" width="1778" height="2133" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -355,7 +409,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="IvyIDEA" order="7" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.24120317" />
       <window_info anchor="bottom" id="ANTLR Preview" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -368,8 +422,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32985595" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Database Console" weight="0.32985595" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24859709" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24711317" />
       <window_info anchor="bottom" id="Run with VisualVM" order="7" />
       <window_info anchor="bottom" id="IDEtalk Messages" order="7" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -377,6 +430,7 @@
       <window_info anchor="bottom" id="Debug with VisualVM" order="7" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.32985595" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" x="0" y="0" width="412" height="1933" id="Documentation" order="4" side_tool="true" weight="0.32963374" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -399,14 +453,27 @@
     <MESSAGE value="Discover the type of thing that the property string is from." />
     <MESSAGE value="Resolve the property referred to as a string." />
     <MESSAGE value="Should add annotation to data class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Should add annotation to data class." />
+    <MESSAGE value="Adds annotation to data class proper ;)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds annotation to data class proper ;)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="20" />
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+        <watch expression="((PsiClassReferenceType) dataClass).getClassName()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>((PsiClassReferenceType) dataClass).getClassName()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
       <expression>
         <expression-string>formalType.getCanonicalText()</expression-string>
@@ -416,14 +483,63 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/GenericsUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1022">
+          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/GenericsUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1862">
+          <caret line="168" column="127" selection-start-line="168" selection-start-column="127" selection-end-line="168" selection-end-column="127" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/GenericsUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2422">
+          <caret line="173" column="66" lean-forward="true" selection-start-line="173" selection-start-column="66" selection-end-line="173" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1806">
           <caret line="129" column="70" lean-forward="true" selection-start-line="129" selection-start-column="70" selection-end-line="129" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6863#6864#0" expanded="true" />
-            <element signature="e#6932#6933#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -432,10 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4984">
           <caret line="356" column="12" lean-forward="true" selection-start-line="356" selection-start-column="12" selection-end-line="356" selection-end-column="12" />
-          <folding>
-            <element signature="e#11673#11674#0" expanded="true" />
-            <element signature="e#11723#11724#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -466,8 +578,6 @@
           <caret line="21" column="75" lean-forward="true" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6863#6864#0" expanded="true" />
-            <element signature="e#6932#6933#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -499,8 +609,6 @@
           <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6863#6864#0" expanded="true" />
-            <element signature="e#6932#6933#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -532,8 +640,6 @@
           <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6863#6864#0" expanded="true" />
-            <element signature="e#6932#6933#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -647,10 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4340">
           <caret line="356" column="12" selection-start-line="356" selection-start-column="12" selection-end-line="356" selection-end-column="12" />
-          <folding>
-            <element signature="e#11673#11674#0" expanded="true" />
-            <element signature="e#11723#11724#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -672,9 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3682">
           <caret line="291" column="25" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
-          <folding>
-            <element signature="e#13364#13365#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -692,13 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/PsiJavaParserFacadeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="103" column="67" lean-forward="true" selection-start-line="103" selection-start-column="67" selection-end-line="103" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/58054ca2-cc18-4bb3-ad0b-28f147c2fa15/console_3.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -713,20 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/PsiClassReferenceType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiClassType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="334" column="31" selection-start-line="334" selection-start-column="31" selection-end-line="334" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/TypeCorrector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
@@ -734,14 +812,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiPrimitiveType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/GenericsUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiClassType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/source/PsiClassReferenceType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1288">
+          <caret line="215" column="16" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
+          <folding>
+            <element signature="e#7392#7393#0" expanded="true" />
+            <element signature="e#7442#7443#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-impl/src/com/intellij/psi/impl/PsiJavaParserFacadeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="718">
-          <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+          <caret line="291" selection-start-line="291" selection-end-line="291" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/platform/core-api/src/com/intellij/psi/PsiElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="178" column="15" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6863#6864#0" expanded="true" />
-            <element signature="e#6932#6933#0" expanded="true" />
           </folding>
         </state>
       </provider>
