@@ -36,7 +36,11 @@
     <!-- Add your actions here -->
     <group id="to.etc.domui.intellij.MyGroup" text="DomUI options" description="DomUI examples">
       <add-to-group group-id="RefactoringMenu" anchor="last" />
-      <action class="to.etc.domui.intellij.actions.FixPropertiesAction" id="to.etc.domui.intellij.FixPluginsAction" text="Fix Properties" />
+      <action class="to.etc.domui.intellij.actions.FixPropertiesAction"
+              id="to.etc.domui.intellij.FixPluginsAction"
+              text="Replace property strings with typed references"
+              icon="DomuiPluginIcons.FIX_PROPERTIES"
+      />
     </group>
   </actions>
 
