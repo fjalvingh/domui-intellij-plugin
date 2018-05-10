@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4f0a70f-b0d9-481c-9e6b-b04020e8acca" name="Default" comment="Adds annotation to data class proper ;)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e4f0a70f-b0d9-481c-9e6b-b04020e8acca" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -81,8 +80,8 @@
       <file leaf-file-name="FixPropertiesAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="198" selection-start-line="198" selection-end-line="198" />
+            <state relative-caret-position="741">
+              <caret line="195" column="83" lean-forward="true" selection-start-line="195" selection-start-column="83" selection-end-line="195" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -347,7 +346,7 @@
       <workItem from="1525720499439" duration="2490000" />
       <workItem from="1525723342685" duration="434000" />
       <workItem from="1525723872255" duration="737000" />
-      <workItem from="1525974964741" duration="2391000" />
+      <workItem from="1525974964741" duration="2779000" />
     </task>
     <task id="LOCAL-00001" summary="Reached the target class of a method call (FormBuilder ;)">
       <created>1524774210369</created>
@@ -391,11 +390,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524838024207</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Replaces property expressions ;)">
+      <created>1525977396687</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1525977396687</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34980000" />
+    <option name="totallyTimeSpent" value="35368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1778" height="2133" extended-state="4" />
@@ -454,7 +460,8 @@
     <MESSAGE value="Resolve the property referred to as a string." />
     <MESSAGE value="Should add annotation to data class." />
     <MESSAGE value="Adds annotation to data class proper ;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adds annotation to data class proper ;)" />
+    <MESSAGE value="Replaces property expressions ;)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replaces property expressions ;)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -860,8 +867,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="198" selection-start-line="198" selection-end-line="198" />
+        <state relative-caret-position="741">
+          <caret line="195" column="83" lean-forward="true" selection-start-line="195" selection-start-column="83" selection-end-line="195" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
