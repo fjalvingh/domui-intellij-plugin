@@ -183,19 +183,17 @@ public class FixPropertiesAction extends AnAction {
 			System.out.println("- property expr resolves to " + path);
 
 			//-- We need a reference to the data class with a _ appended
-			//PsiClass aClass = m_psiElementFactory.createClass(((PsiClassType) dataClass).getClassName() + "_");
-			PsiClass aClass = m_javaPsiFacade.findClass(dataClass.getQualifiedName() + "_", GlobalSearchScope.allScope(m_project));
-			//PsiClassType qclass = m_psiElementFactory.createTypeByFQClassName(((PsiClassType) dataClass).getClassName() + "_");
+			String typedClassName = dataClass.getQualifiedName() + "_";
+			PsiClass aClass = m_javaPsiFacade.findClass(typedClassName, GlobalSearchScope.allScope(m_project));
 
-			//PsiReferenceExpression prx = m_psiElementFactory.createReferenceExpression(aClass);
-			//
 			//-- Annotate the target class
 			String callPath = resolvePropertyPath(dataClassType, path);
 			if(null == callPath)
 				return;
 
-			PsiExpression ref = m_psiElementFactory.createExpressionFromText(aClass.getName() + "." + callPath, mc);
+			PsiExpression ref = m_psiElementFactory.createExpressionFromText(typedClassName + "." + callPath, mc);
 			propertyExpr.replace(ref);
+			JavaCodeStyleManager.getInstance(m_project).shortenClassReferences(mc);
 		}
 
 		private String resolvePropertyPath(PsiClassType rootType, String path) {
