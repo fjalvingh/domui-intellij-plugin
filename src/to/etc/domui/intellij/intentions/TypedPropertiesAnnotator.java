@@ -5,6 +5,7 @@ import com.intellij.lang.annotation.Annotator;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiMethodCallExpression;
 import com.intellij.psi.PsiType;
 import com.intellij.psi.util.PsiTreeUtil;
@@ -13,10 +14,13 @@ import to.etc.domui.intellij.FixUtils;
 import to.etc.domui.intellij.FixUtils.QFieldMethod;
 
 /**
+ * This tries to recognize occurrences of property strings in calls that
+ * could be replaced by QField typed properties.
+ *
  * @author <a href="mailto:jal@etc.to">Frits Jalvingh</a>
  * Created on 11-5-18.
  */
-public class TypedPropertiesAnnotator implements Annotator {
+final public class TypedPropertiesAnnotator implements Annotator {
 	@Override public void annotate(@NotNull PsiElement element, @NotNull AnnotationHolder holder) {
 		if(! (element instanceof PsiMethodCallExpression))
 			return;
@@ -62,8 +66,9 @@ public class TypedPropertiesAnnotator implements Annotator {
 			return;
 
 		//-- We can do a quick fix.
-		holder.createWeakWarningAnnotation(mc.getArgumentList().getExpressions()[replacementMethod.getqIndex()], "Property string can be replaced with typed");
-
-
+		PsiExpression propertyArgumentExpression = mc.getArgumentList().getExpressions()[replacementMethod.getqIndex()];
+		holder.createWeakWarningAnnotation(propertyArgumentExpression, "Property string can be replaced with DomUI typed property")
+			.registerFix(new TypefulPropertyQuickFix())
+		;
 	}
 }

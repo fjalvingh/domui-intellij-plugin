@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4f0a70f-b0d9-481c-9e6b-b04020e8acca" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/FixUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypedPropertiesAnnotator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertyReferencesMethodVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/to/etc/domui/intellij/FixUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/FixUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypedPropertiesAnnotator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypedPropertiesAnnotator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,8 +86,8 @@
       <file leaf-file-name="FixPropertiesAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="674">
-              <caret line="187" selection-start-line="187" selection-end-line="187" />
+            <state relative-caret-position="520">
+              <caret line="86" selection-start-line="86" selection-end-line="86" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3587#3588#0" expanded="true" />
@@ -96,11 +97,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="FixPropertiesCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="30" selection-start-line="28" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FixPropertyReferencesMethodVisitor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertyReferencesMethodVisitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="FixUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/FixUtils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="499">
-              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+              <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#986#987#0" expanded="true" />
@@ -112,15 +131,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypefulPropertyQuickFix.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TypefulPropertyQuickFix.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="532">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#336#337#0" expanded="true" />
-                <element signature="e#354#355#0" expanded="true" />
                 <element signature="e#443#444#0" expanded="true" />
                 <element signature="e#472#473#0" expanded="true" />
                 <element signature="e#582#583#0" expanded="true" />
@@ -128,27 +145,6 @@
                 <element signature="e#837#838#0" expanded="true" />
                 <element signature="e#855#856#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TypedPropertiesAnnotator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypedPropertiesAnnotator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PsiMethodCallExpression.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiMethodCallExpression.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -187,11 +183,13 @@
       <list>
         <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/PluginApplication.java" />
         <option value="$PROJECT_DIR$/src/icons/DomuiPluginIcons.java" />
-        <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java" />
         <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/FixUtils.java" />
-        <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" />
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypedPropertiesAnnotator.java" />
+        <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" />
+        <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesCommand.java" />
+        <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertyReferencesMethodVisitor.java" />
+        <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java" />
       </list>
     </option>
   </component>
@@ -413,7 +411,7 @@
       <workItem from="1525723342685" duration="434000" />
       <workItem from="1525723872255" duration="737000" />
       <workItem from="1525974964741" duration="4734000" />
-      <workItem from="1526040980624" duration="4107000" />
+      <workItem from="1526040980624" duration="4739000" />
     </task>
     <task id="LOCAL-00001" summary="Reached the target class of a method call (FormBuilder ;)">
       <created>1524774210369</created>
@@ -499,11 +497,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526043950434</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add code annotator that recognizes property strings that can be replaced with typed references.">
+      <created>1526045373413</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1526045373413</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41430000" />
+    <option name="totallyTimeSpent" value="42062000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1768" height="2133" extended-state="4" />
@@ -522,7 +527,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.21857923" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.21857923" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32985595" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -530,7 +535,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32985595" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24680604" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24680604" />
       <window_info anchor="bottom" id="Run with VisualVM" order="7" />
       <window_info anchor="bottom" id="IDEtalk Messages" order="7" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -567,7 +572,8 @@
     <MESSAGE value="Add DomUI icon to IntelliJ refactor icon for now." />
     <MESSAGE value="Do not throw NPE's around when we're running the action ouside an editor, project or file." />
     <MESSAGE value="Disable the action if we're not in the right state." />
-    <option name="LAST_COMMIT_MESSAGE" value="Disable the action if we're not in the right state." />
+    <MESSAGE value="Add code annotator that recognizes property strings that can be replaced with typed references." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add code annotator that recognizes property strings that can be replaced with typed references." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -596,27 +602,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4984">
-          <caret line="356" column="12" lean-forward="true" selection-start-line="356" selection-start-column="12" selection-end-line="356" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../idea/platform/lang-impl/src/com/intellij/codeInsight/actions/OptimizeImportsAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1022">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/PluginApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -934,36 +919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#837#838#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="187" selection-start-line="187" selection-end-line="187" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3587#3588#0" expanded="true" />
-            <element signature="e#3638#3639#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiMethodCallExpression.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -981,7 +936,7 @@
     <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/FixUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="499">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#986#987#0" expanded="true" />
@@ -994,10 +949,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypedPropertiesAnnotator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+        <state relative-caret-position="499">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3587#3588#0" expanded="true" />
+            <element signature="e#3638#3639#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="30" selection-start-line="28" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertyReferencesMethodVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -22,6 +22,8 @@ final public class FixUtils {
 
 	static private final String QFIELD_FQN = "to.etc.webapp.query.QField";
 
+	public static final String GENPROP_FQN = "to.etc.annotations.GenerateProperties";
+
 	private FixUtils() {
 	}
 
