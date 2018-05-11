@@ -26,10 +26,12 @@
     <component>
       <implementation-class>to.etc.domui.intellij.PluginApplication</implementation-class>
     </component>
+
   </application-components>
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
+    <annotator language="JAVA" implementationClass="to.etc.domui.intellij.intentions.TypedPropertiesAnnotator"/>
   </extensions>
 
   <actions>
@@ -44,5 +46,7 @@
       />
     </group>
   </actions>
+
+
 
 </idea-plugin>

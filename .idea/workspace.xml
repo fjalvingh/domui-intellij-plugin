@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4f0a70f-b0d9-481c-9e6b-b04020e8acca" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/FixUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypedPropertiesAnnotator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -78,11 +82,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FixPropertiesAction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FixPropertiesAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="812">
-              <caret line="82" column="63" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="63" />
+            <state relative-caret-position="674">
+              <caret line="187" selection-start-line="187" selection-end-line="187" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3587#3588#0" expanded="true" />
+                <element signature="e#3638#3639#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FixUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/FixUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="499">
+              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#986#987#0" expanded="true" />
+                <element signature="e#1010#1011#0" expanded="true" />
+                <element signature="e#1038#1039#0" expanded="true" />
+                <element signature="e#1062#1063#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TypefulPropertyQuickFix.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#336#337#0" expanded="true" />
+                <element signature="e#354#355#0" expanded="true" />
+                <element signature="e#443#444#0" expanded="true" />
+                <element signature="e#472#473#0" expanded="true" />
+                <element signature="e#582#583#0" expanded="true" />
+                <element signature="e#597#598#0" expanded="true" />
+                <element signature="e#837#838#0" expanded="true" />
+                <element signature="e#855#856#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TypedPropertiesAnnotator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypedPropertiesAnnotator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="882">
+              <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,11 +144,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../idea/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java">
+      <file leaf-file-name="PsiMethodCallExpression.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiMethodCallExpression.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+            <state relative-caret-position="154">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -102,29 +156,8 @@
       <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PluginApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/PluginApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DomuiPluginIcons.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/icons/DomuiPluginIcons.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="490">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -134,8 +167,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -143,6 +176,7 @@
     <findStrings>
       <find>PsiAnn</find>
       <find>Util</find>
+      <find>update</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,8 +187,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/PluginApplication.java" />
         <option value="$PROJECT_DIR$/src/icons/DomuiPluginIcons.java" />
-        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java" />
+        <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/FixUtils.java" />
         <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java" />
+        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypedPropertiesAnnotator.java" />
       </list>
     </option>
   </component>
@@ -180,7 +217,9 @@
     <option name="width" value="1768" />
     <option name="height" value="2133" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -221,6 +260,20 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="intellij" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="domui-intellij-plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="domui-intellij-plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="intellij" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="domui-intellij-plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="domui-intellij-plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="intellij" type="462c0819:PsiDirectoryNode" />
+              <item name="intentions" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -248,6 +301,11 @@
     <option name="SPLIT_DIVIDER_POSITION" value="300" />
     <option name="AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="to.etc.domui.intellij.FixUtils" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -355,7 +413,7 @@
       <workItem from="1525723342685" duration="434000" />
       <workItem from="1525723872255" duration="737000" />
       <workItem from="1525974964741" duration="4734000" />
-      <workItem from="1526040980624" duration="1814000" />
+      <workItem from="1526040980624" duration="4107000" />
     </task>
     <task id="LOCAL-00001" summary="Reached the target class of a method call (FormBuilder ;)">
       <created>1524774210369</created>
@@ -427,11 +485,25 @@
       <option name="project" value="LOCAL" />
       <updated>1525979093739</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Do not throw NPE's around when we're running the action ouside an editor, project or file.">
+      <created>1526043104413</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1526043104413</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Disable the action if we're not in the right state.">
+      <created>1526043950434</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1526043950434</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39137000" />
+    <option name="totallyTimeSpent" value="41430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1768" height="2133" extended-state="4" />
@@ -450,7 +522,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39990065" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.21857923" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32985595" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -493,7 +565,9 @@
     <MESSAGE value="Replaces property expressions ;)" />
     <MESSAGE value="Also import any missing classes." />
     <MESSAGE value="Add DomUI icon to IntelliJ refactor icon for now." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add DomUI icon to IntelliJ refactor icon for now." />
+    <MESSAGE value="Do not throw NPE's around when we're running the action ouside an editor, project or file." />
+    <MESSAGE value="Disable the action if we're not in the right state." />
+    <option name="LAST_COMMIT_MESSAGE" value="Disable the action if we're not in the right state." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -522,50 +596,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/GenericsUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1862">
-          <caret line="168" column="127" selection-start-line="168" selection-start-column="127" selection-end-line="168" selection-end-column="127" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/GenericsUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2422">
-          <caret line="173" column="66" lean-forward="true" selection-start-line="173" selection-start-column="66" selection-end-line="173" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1806">
-          <caret line="129" column="70" lean-forward="true" selection-start-line="129" selection-start-column="70" selection-end-line="129" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4984">
@@ -600,6 +630,8 @@
           <caret line="21" column="75" lean-forward="true" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3587#3588#0" expanded="true" />
+            <element signature="e#3638#3639#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -631,6 +663,8 @@
           <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3587#3588#0" expanded="true" />
+            <element signature="e#3638#3639#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -662,6 +696,8 @@
           <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3587#3588#0" expanded="true" />
+            <element signature="e#3638#3639#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -719,13 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="25" column="63" lean-forward="true" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiMethodCallExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -879,24 +908,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
+    <entry file="file://$PROJECT_DIR$/../idea/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        <state relative-caret-position="713">
+          <caret line="251" column="5" lean-forward="true" selection-start-line="251" selection-start-column="5" selection-end-line="251" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../idea/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/org/intellij/images/thumbnail/impl/ThumbnailViewUI.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+        <state relative-caret-position="516">
+          <caret line="572" column="55" selection-start-line="572" selection-start-column="49" selection-end-line="572" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#37050#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/com/intellij/internal/anomalies/TopAnomaliesAction.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#8581#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypefulPropertyQuickFix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/actions/FixPropertiesAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="82" column="63" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="63" />
+        <state relative-caret-position="674">
+          <caret line="187" selection-start-line="187" selection-end-line="187" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3587#3588#0" expanded="true" />
+            <element signature="e#3638#3639#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../idea/java/java-psi-api/src/com/intellij/psi/PsiMethodCallExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/FixUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1010#1011#0" expanded="true" />
+            <element signature="e#1038#1039#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to/etc/domui/intellij/intentions/TypedPropertiesAnnotator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
