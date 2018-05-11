@@ -39,6 +39,7 @@
       <action class="to.etc.domui.intellij.actions.FixPropertiesAction"
               id="to.etc.domui.intellij.FixPluginsAction"
               text="Replace property strings with typed references"
+              description="Replace property reference strings that can be replaced with typed properties, and annotate all classes used to generate them"
               icon="DomuiPluginIcons.FIX_PROPERTIES"
       />
     </group>

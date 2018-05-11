@@ -90,8 +90,26 @@ public class FixPropertiesAction extends AnAction {
 		FixPropertiesCommand fp = new FixPropertiesCommand(project, psiManager, psiFile);
 
 		CommandProcessor.getInstance().executeCommand(project, fp, "Fix Properties", null);
+	}
 
+	@Override public void update(AnActionEvent e) {
+		e.getPresentation().setEnabled(isEnabled(e));
+	}
 
+	/**
+	 * Only enable the action when we're properly inside some file.
+	 */
+	private boolean isEnabled(AnActionEvent e) {
+		Editor editor = e.getData(PlatformDataKeys.EDITOR);
+		if(null == editor)
+			return false;
+		Project project = e.getData(PlatformDataKeys.PROJECT);
+		if(null == project)
+			return false;
+		PsiFile psiFile = e.getData(LangDataKeys.PSI_FILE);
+		if(null == psiFile)
+			return false;
+		return true;
 	}
 
 	private class FixPropertiesCommand implements Runnable {
