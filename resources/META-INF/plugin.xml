@@ -5,38 +5,36 @@
   <vendor email="jal@domui.org" url="http://domui.org/">The DomUI user interface</vendor>
 
   <description><![CDATA[
-      Helps with developing DomUI applications.
+      This plugin adds supposedly useful extra's to work with DomUI to IntelliJ Idea. The plugin adds the following:
+      <ul>
+        <li>Replace strings that contain property names or paths by DomUI's typed properties</li>
+        <li>Shows warnings for above property paths and allows them to be replaced with a quick fix</li>
+      </ul>
     ]]></description>
 
   <change-notes><![CDATA[
-      Initial release
+      1.0 Initial release for DomUI 2.0
     ]]>
   </change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="173.0"/>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
+  <!-- Compatible only with IntelliJ Idea Java IDE -->
+  <depends>com.intellij.modules.java</depends>
 
   <application-components>
     <component>
       <implementation-class>to.etc.domui.intellij.PluginApplication</implementation-class>
     </component>
-
   </application-components>
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
     <annotator language="JAVA" implementationClass="to.etc.domui.intellij.intentions.TypedPropertiesAnnotator"/>
   </extensions>
 
   <actions>
-    <!-- Add your actions here -->
-    <group id="to.etc.domui.intellij.MyGroup" text="DomUI options" description="DomUI examples">
+    <group id="to.etc.domui.intellij.DomUIGroup" text="DomUI options" description="DomUI refactorings">
       <add-to-group group-id="RefactoringMenu" anchor="last" />
       <action class="to.etc.domui.intellij.actions.FixPropertiesAction"
               id="to.etc.domui.intellij.FixPluginsAction"
@@ -46,7 +44,5 @@
       />
     </group>
   </actions>
-
-
 
 </idea-plugin>

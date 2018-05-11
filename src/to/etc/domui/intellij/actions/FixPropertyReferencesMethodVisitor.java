@@ -63,20 +63,20 @@ public class FixPropertyReferencesMethodVisitor extends JavaRecursiveElementVisi
 
 		QFieldMethod replacementMethod = FixUtils.findQFieldMethod(targetClass, methodName, mc.getArgumentList().getExpressionTypes());
 		if(null == replacementMethod) {
-			System.out.println(" - no alt found");
+			//System.out.println(" - no alt found");
 			return;
 		}
-		System.out.println(" - replacement " + replacementMethod.getMethod().getText());
+		//System.out.println(" - replacement " + replacementMethod.getMethod().getText());
 
 		//-- Find the type that needs to have properties generated,
 		PsiType dataClassTypeRef = FixUtils.findPropertySourceClass(mc, replacementMethod.getMethod(), replacementMethod.getqIndex());
 		if(null == dataClassTypeRef) {
-			System.out.println("- cannot find type of object");
+			//System.out.println("- cannot find type of object");
 			return;
 		}
-		System.out.println("- property is on " + dataClassTypeRef.getCanonicalText());
+		//System.out.println("- property is on " + dataClassTypeRef.getCanonicalText());
 		if(!(dataClassTypeRef instanceof PsiClassType)) {
-			System.out.println("- data class is not of type Class");
+			//System.out.println("- data class is not of type Class");
 			return;
 		}
 		PsiClassType dataClassType = (PsiClassType) dataClassTypeRef;
@@ -89,10 +89,10 @@ public class FixPropertyReferencesMethodVisitor extends JavaRecursiveElementVisi
 		PsiExpression propertyExpr = mc.getArgumentList().getExpressions()[replacementMethod.getqIndex()];
 		String path = calculatePropertyPath(propertyExpr);
 		if(null == path) {
-			System.out.println("- cannot resolve propertyExpr " + propertyExpr.getText());
+			//System.out.println("- cannot resolve propertyExpr " + propertyExpr.getText());
 			return;
 		}
-		System.out.println("- property expr resolves to " + path);
+		//System.out.println("- property expr resolves to " + path);
 
 		//-- We need a reference to the data class with a _ appended
 		String typedClassName = dataClass.getQualifiedName() + "_";
@@ -128,7 +128,7 @@ public class FixPropertyReferencesMethodVisitor extends JavaRecursiveElementVisi
 
 			PsiType returnType = getter.getReturnType();
 			if(returnType instanceof PsiPrimitiveType) {
-				System.out.println(">> at " + segment + " is primitive");
+				//System.out.println(">> at " + segment + " is primitive");
 				return sb.toString();
 			}
 
@@ -137,7 +137,7 @@ public class FixPropertyReferencesMethodVisitor extends JavaRecursiveElementVisi
 
 
 			} else {
-				System.out.println(">> at " + segment + " no class");
+				//System.out.println(">> at " + segment + " no class");
 				return null;
 			}
 		}
