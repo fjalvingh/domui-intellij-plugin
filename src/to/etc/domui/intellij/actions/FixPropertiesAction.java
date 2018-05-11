@@ -7,7 +7,7 @@ import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.ReadonlyStatusHandler;
@@ -58,8 +58,17 @@ public class FixPropertiesAction extends AnAction {
 	@Override public void actionPerformed(AnActionEvent e) {
 		//Messages.showErrorDialog("You're not doing it right", "Welcome");
 		VirtualFile myFile = e.getData(PlatformDataKeys.VIRTUAL_FILE);
-		Document document = e.getData(PlatformDataKeys.EDITOR).getDocument();
+		Editor editor = e.getData(PlatformDataKeys.EDITOR);
+		if(null == editor) {
+			Messages.showErrorDialog("This action is only valid inside an editor", "Welcome");
+			return;
+		}
+		//Document document = editor.getDocument();
 		Project project = e.getData(PlatformDataKeys.PROJECT);
+		if(null == project) {
+			Messages.showErrorDialog("This action is only valid inside a project", "Welcome");
+			return;
+		}
 
 		final PsiManager psiManager = PsiManager.getInstance(project);
 
@@ -70,8 +79,13 @@ public class FixPropertiesAction extends AnAction {
 		}
 
 		PsiFile psiFile = e.getData(LangDataKeys.PSI_FILE);
-		System.out.println("Psi: ===================");
-		System.out.println(psiFile.toString());
+		if(null == psiFile) {
+			Messages.showErrorDialog("Current file is not known", "Welcome");
+			return;
+		}
+
+		//System.out.println("Psi: ===================");
+		//System.out.println(psiFile.toString());
 
 		FixPropertiesCommand fp = new FixPropertiesCommand(project, psiManager, psiFile);
 
