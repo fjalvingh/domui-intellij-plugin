@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import to.etc.domui.intellij.DomUIDebugListener;
 
 /**
+ * This adds the DomUI command port as a command line parameter to the server startup line, when
+ * the Tomcat server is started from IntelliJ.
+ *
  * @author <a href="mailto:jal@etc.to">Frits Jalvingh</a>
  * Created on 11-5-18.
  */

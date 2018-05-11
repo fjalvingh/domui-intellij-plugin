@@ -10,6 +10,7 @@ public class PluginApplication implements ApplicationComponent {
 	@Override
 	public void initComponent() {
 		System.out.println("domui Initializing");
+		DomUIDebugListener.INSTANCE.start();
 	}
 
 
