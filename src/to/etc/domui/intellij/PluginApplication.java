@@ -11,4 +11,10 @@ public class PluginApplication implements ApplicationComponent {
 	public void initComponent() {
 		System.out.println("domui Initializing");
 	}
+
+
+
+
+
+
 }

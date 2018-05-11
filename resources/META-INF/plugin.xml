@@ -13,7 +13,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      1.0 Initial release for DomUI 2.0
+      0.1 Beta release for DomUI 2.0
     ]]>
   </change-notes>
 
@@ -31,6 +31,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <annotator language="JAVA" implementationClass="to.etc.domui.intellij.intentions.TypedPropertiesAnnotator"/>
+    <runConfigurationExtension implementation="to.etc.domui.intellij.runtime.DomUIDebugPortConfigurationExtension" />
   </extensions>
 
   <actions>
