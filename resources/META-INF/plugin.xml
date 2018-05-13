@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>to.etc.domui.intellij.plugin</id>
   <name>DomUI Development Plugin</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <vendor email="jal@domui.org" url="http://domui.org/">The DomUI user interface</vendor>
 
   <description><![CDATA[
@@ -13,7 +13,8 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      0.1 Beta release for DomUI 2.0
+      1.0 Initial beta release for DomUI 2.0
+      1.1 Allow DomUI to send Open File commands to IntelliJ for debugging
     ]]>
   </change-notes>
 
