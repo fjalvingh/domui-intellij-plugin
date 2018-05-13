@@ -6,7 +6,6 @@ import com.intellij.execution.configurations.JavaParameters;
 import com.intellij.execution.configurations.RunConfigurationBase;
 import com.intellij.execution.configurations.RunnerSettings;
 import org.jetbrains.annotations.NotNull;
-import to.etc.domui.intellij.DomUIDebugListener;
 
 /**
  * This adds the DomUI command port as a command line parameter to the server startup line, when
