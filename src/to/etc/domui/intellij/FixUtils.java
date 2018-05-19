@@ -67,18 +67,20 @@ final public class FixUtils {
 				PsiReferenceExpression rx = (PsiReferenceExpression) reference; // rr.column still
 				PsiExpression subref = rx.getQualifierExpression();
 				//System.out.println("* " + subref);								// rr only, now
-				PsiType type = subref.getType();
-				//System.out.println("*  type " + type.getCanonicalText());		// to.etc.domui.component.tbl.RowRenderer<to.etc.domuidemo.pages.binding.xxxmodel.InvoiceLineModel>
+				if(null != subref) {
+					PsiType type = subref.getType();
+					//System.out.println("*  type " + type.getCanonicalText());		// to.etc.domui.component.tbl.RowRenderer<to.etc.domuidemo.pages.binding.xxxmodel.InvoiceLineModel>
 
-				//-- We should have a generic instantiation as the type
-				if(type instanceof PsiClassType) {
-					PsiClassType ct = (PsiClassType) type;
+					//-- We should have a generic instantiation as the type
+					if(type instanceof PsiClassType) {
+						PsiClassType ct = (PsiClassType) type;
 
-					PsiType[] typeParams = ct.getParameters();
-					if(typeParams != null && typeParams.length > 0) {
-						PsiType typeParam = typeParams[0];
-						//System.out.println("  * contained type is " + typeParam);
-						return typeParam;
+						PsiType[] typeParams = ct.getParameters();
+						if(typeParams != null && typeParams.length > 0) {
+							PsiType typeParam = typeParams[0];
+							//System.out.println("  * contained type is " + typeParam);
+							return typeParam;
+						}
 					}
 				}
 			}
